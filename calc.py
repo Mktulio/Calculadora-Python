@@ -1,8 +1,11 @@
+# Inicio
+
 import tkinter as tk
 import math
 from tkinter import Entry, INSERT
 
 # Função para avaliar expressões matemáticas
+
 def evaluate_expression():
     try:
         expression = entry.get()
@@ -16,20 +19,24 @@ def evaluate_expression():
         history.insert("end", f"Erro: {str(e)}\n")
 
 # Função para adicionar caracteres à entrada
+
 def append_to_input(char):
     current_text = entry.get()
     entry.delete(0, "end")
     entry.insert(INSERT, current_text + char)
 
 # Função para limpar a entrada
+
 def clear_input():
     entry.delete(0, "end")
 
 # Configuração da janela
+
 root = tk.Tk()
 root.title("Calculadora")
 
 # Criação da entrada de texto
+
 entry = Entry(root, font=("Helvetica", 20))
 entry.grid(row=0, column=0, columnspan=4)
 entry.bind("<Return>", lambda event: evaluate_expression())
